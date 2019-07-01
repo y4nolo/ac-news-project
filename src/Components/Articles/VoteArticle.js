@@ -11,11 +11,21 @@ class VoteArticle extends Component {
     const { voteChange } = this.state;
     return (
       <div>
-        <p> votes:{votes + voteChange}</p>
-        <button onClick={() => this.handleVote(1)} disabled={voteChange > 0}>
+        <h5> votes:{votes + voteChange}</h5>
+        <button
+          role="img"
+          aria-labelledby="votingButton"
+          onClick={() => this.handleVote(1)}
+          disabled={voteChange > 0}
+        >
           🔺
         </button>
-        <button onClick={() => this.handleVote(-1)} disabled={voteChange < 0}>
+        <button
+          role="img"
+          aria-labelledby="votingButton"
+          onClick={() => this.handleVote(-1)}
+          disabled={voteChange < 0}
+        >
           🔻
         </button>
       </div>

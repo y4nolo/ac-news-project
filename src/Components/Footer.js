@@ -7,31 +7,31 @@ function Footer() {
     <div id="footer">
       <ul class="icons">
         <li>
-          <a href="https://twitter.com/northcoders" class="icon fa-twitter">
+          <p href="https://twitter.com/northcoders" class="icon fa-twitter">
             <span class="label">Twitter</span>
-          </a>
+          </p>
         </li>
         <li>
-          <a
+          <p
             href="https://www.facebook.com/northcoders/"
             class="icon fa-facebook"
           >
             <span class="label">Facebook</span>
-          </a>
+          </p>
         </li>
         <li>
-          <a
+          <p
             href="https://www.instagram.com/northcoders/"
             class="icon fa-instagram"
           >
             <span class="label">Instagram</span>
-          </a>
+          </p>
         </li>
 
         <li>
-          <a href="https://github.com/northcoders" class="icon fa-github">
+          <p href="https://github.com/northcoders" class="icon fa-github">
             <span class="label">Github</span>
-          </a>
+          </p>
         </li>
       </ul>
       Design: Ana Chan

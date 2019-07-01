@@ -1,15 +1,15 @@
 import React from "react";
 import "../css/main.css";
 
-function Header() {
+function Header({ username }) {
   return (
     <div id="header">
       <h1>
-        <a href="/">
+        <p href="/">
           <span>NorthCoders News</span>
-        </a>
+        </p>
       </h1>
-      <a href="#menu">Menu</a>
+      <p> You are now logged in as {username}</p>
     </div>
   );
 }

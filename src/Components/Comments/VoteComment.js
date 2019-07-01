@@ -23,7 +23,6 @@ class VoteComment extends Component {
   }
   handleVote = increment => {
     const { comment_id } = this.props;
-    console.log(comment_id, this.props);
     api
       .modifyVotesforComments(comment_id, increment)
       .then(updatedArticle => {

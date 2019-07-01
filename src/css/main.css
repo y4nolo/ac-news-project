@@ -2,7 +2,6 @@
 /* @import url("./font-awesome.min.css"); */
 @import url("https://fonts.googleapis.com/css?family=Signika:300,700");
 
-
 /*
 	Broadcast by TEMPLATED
 	templated.co @templatedco
@@ -82,7 +81,7 @@ figcaption,
 footer,
 header,
 hgroup,
-menu,
+/* menu, */
 nav,
 output,
 ruby,
@@ -93,7 +92,7 @@ mark,
 audio,
 video {
   margin: 0;
-  padding: 0;
+  padding: 0em 0em 0em 0em;
   border: 0;
   font-size: 100%;
   font: inherit;
@@ -108,7 +107,7 @@ figure,
 footer,
 header,
 hgroup,
-menu,
+/* menu, */
 nav,
 section {
   display: block;
@@ -2807,7 +2806,7 @@ article.special {
   text-align: center;
 }
 
-header p {
+/* header p {
   position: relative;
   margin: 0 0 1.5em 0;
 }
@@ -2831,7 +2830,7 @@ header h6 + p {
 
 header p {
   color: #676d71;
-}
+} */
 
 /* Tab */
 
@@ -2988,7 +2987,7 @@ table.alt tbody tr td {
   position: relative;
   z-index: 99;
 }
-
+/* 
 .wrapper header {
   margin-bottom: 4em;
 }
@@ -2997,7 +2996,7 @@ table.alt tbody tr td {
   .wrapper header {
     margin-bottom: 2em;
   }
-}
+} */
 
 .wrapper.style1 {
   background-color: #062038;
@@ -3558,7 +3557,7 @@ body.subpage {
   text-align: right;
   top: 0;
   width: 100%;
-  z-index: 10001;
+  z-index: 900;
 }
 
 #header > h1 {
@@ -3601,11 +3600,11 @@ body.subpage {
   color: #ffffff;
 }
 
-#header > a[href="#menu"] {
+/* #header > a[href="#menu"] {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-}
-
+} */
+/* 
 #header > a[href="#menu"]:before {
   content: "";
   -moz-osx-font-smoothing: grayscale;
@@ -3614,9 +3613,9 @@ body.subpage {
   font-style: normal;
   font-weight: normal;
   text-transform: none !important;
-}
+} */
 
-#header > a[href="#menu"]:before {
+/* #header > a[href="#menu"]:before {
   margin: 0 0.5em 0 0;
 }
 
@@ -3624,7 +3623,7 @@ body.subpage {
   border-left: solid 1px rgba(255, 255, 255, 0.15);
   padding-left: 1.25em;
   margin-left: 0.5em;
-}
+} */
 
 #header > a:last-child {
   padding-right: 1.25em;
@@ -3635,10 +3634,10 @@ body.subpage {
     padding: 0 0.5em;
   }
 
-  #header > a + a[href="#menu"]:last-child {
+  /* #header > a + a[href="#menu"]:last-child {
     padding-left: 1em;
     margin-left: 0.25em;
-  }
+  } */
 
   #header > a:last-child {
     padding-right: 1em;
@@ -3672,7 +3671,7 @@ body.subpage {
 
 /* Menu */
 
-#menu {
+/* #menu {
   -moz-transform: translateX(20em);
   -webkit-transform: translateX(20em);
   -ms-transform: translateX(20em);
@@ -3790,7 +3789,7 @@ body.subpage {
   #menu {
     padding: 2.5em 1.75em;
   }
-}
+} */
 
 /* Banner */
 
@@ -3798,7 +3797,7 @@ body.subpage {
   display: -ms-flexbox;
   -ms-flex-pack: center;
   -ms-flex-align: center;
-  padding: 8em 0 6em 0;
+  padding: 10em 0 6em 0;
   -moz-align-items: center;
   -webkit-align-items: center;
   -ms-align-items: center;
@@ -3837,7 +3836,7 @@ body.subpage {
   z-index: 2;
 }
 
-#banner h1 {
+/* #banner h1 {
   font-size: 4em;
   margin-bottom: 0.25em;
 }
@@ -3845,7 +3844,7 @@ body.subpage {
 #banner p {
   color: rgba(255, 255, 255, 0.65);
   font-size: 1.5em;
-}
+} */
 
 #banner video {
   -moz-transform: translateX(50%) translateY(50%);
@@ -3978,4 +3977,83 @@ body.is-loading #banner:before {
   #footer {
     padding: 3em 0 1em 0;
   }
+}
+
+html,
+body {
+  margin: 0;
+}
+
+#page-wrap {
+  text-align: center;
+
+  /* Prevent sidebar from showing a scrollbar on page */
+  overflow: auto;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+
+  /* Our sidebar item styling */
+  text-decoration: none;
+  margin-bottom: 10px;
+  color: #d1d1d1;
+  transition: color 0.2s;
+  opacity: 0.75;
+}
+
+/* Change color on hover */
+.bm-item:hover {
+  color: white;
+}
+
+/* The rest copied directly from react-burger-menu docs */
+
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 36px;
+  top: 36px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: #373a47;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: #bdc3c7;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  opacity: 0.75;
+}
+
+/* Morph shape necessary with bubble or elastic */
+.bm-morph-shape {
+  fill: #373a47;
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
 }

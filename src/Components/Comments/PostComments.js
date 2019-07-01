@@ -30,11 +30,9 @@ class PostComments extends Component {
   }
 
   handlePostComment = event => {
-    console.log("subimtted");
     event.preventDefault();
     const { article_id } = this.props;
     const { body, user } = this.state;
-    console.log(user);
     api
       .postNewComment({ article_id, user, body })
       .then(comment => {
@@ -49,7 +47,6 @@ class PostComments extends Component {
 
   handleChange = event => {
     const { name, value } = event.target;
-    console.log(value);
     this.setState({
       [name]: value
     });

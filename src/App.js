@@ -4,6 +4,7 @@ import { Router } from "@reach/router";
 import "./css/main.css";
 import Header from "./Components/Header";
 import NavBar from "./Components/NavBar";
+
 import Banner from "./Components/Banner";
 
 import Articles from "./Components/Articles/Articles";
@@ -29,8 +30,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        <NavBar />
+        <Header username={this.state.username} />
+        <NavBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
         <Banner />
 
         <Router>

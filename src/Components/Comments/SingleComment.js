@@ -13,11 +13,10 @@ class SingleComment extends Component {
     const { comment } = this.state;
     return (
       <div>
-        <CommentsList comments={this.state.comments} />
+        <CommentsList comments={comments} />
       </div>
       <div>
-<VoteComment comment_id={comment_id} votes={vote}/>
-
+ <VoteComment comment_id={comment_id} votes={vote}/>
       </div>
     );
   }

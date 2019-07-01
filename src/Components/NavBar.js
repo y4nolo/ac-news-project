@@ -2,32 +2,25 @@ import React from "react";
 import { Link } from "@reach/router";
 import "../css/main.css";
 
+import { push as Menu } from "react-burger-menu";
+
 function NavBar() {
   return (
-    <div
-    // id="menu"
-    >
-      <ul class="links">
-        <br />
-        <br />
-        <li>
-          <a>
+    <div id="outer-container">
+      <Menu pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
+      <main id="page-wrap">
+        <Menu right>
+          <p>
             <Link to="/"> Home </Link>
-          </a>
-        </li>
-
-        <li>
-          <a>
+          </p>
+          <p>
             <Link to="/"> Articles </Link>
-          </a>
-        </li>
-
-        <li>
-          <a>
+          </p>
+          <p>
             <Link to="/topics"> Topics </Link>
-          </a>
-        </li>
-      </ul>
+          </p>
+        </Menu>
+      </main>
     </div>
   );
 }

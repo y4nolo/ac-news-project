@@ -14,16 +14,16 @@ class SingleArticle extends Component {
     return (
       <div key={article.article_id} class="6u 12u$(medium)">
         <h3>{article.title}</h3>
-        <p>{article.body} </p>
+        <h5>{article.body} </h5>
         Topic: {article.topic}
         <Link to={`/user/${article.author}`}>Author: {article.author}</Link>
         Created: {article.created_at}
         <VoteArticle article_id={article.article_id} votes={article.votes} />
         <Link to={`/${article.article_id}/comments/`}>
           {" "}
-          <p article_id={article.article_id}>
+          <h5 article_id={article.article_id}>
             Comments: {article.comment_count}
-          </p>
+          </h5>
         </Link>
         <Comments article_id={article.article_id} />
         <br />
