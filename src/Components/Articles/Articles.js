@@ -25,9 +25,8 @@ class Articles extends React.Component {
         <div>
           <form class="form-inline">
             <label>
-              Sort By:
+              <h5> Sort By: </h5>
               <select
-                inline-block
                 onChange={this.sortArticles}
                 name="category"
                 id="select"
@@ -40,7 +39,7 @@ class Articles extends React.Component {
             </label>
 
             <label>
-              Order By:
+              <h5> Order By:</h5>
               <select
                 inline-block
                 className="select"
