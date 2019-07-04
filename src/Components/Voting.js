@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import * as api from "../Api";
+import * as api from "./Api";
 
 class VoteComment extends Component {
   state = {
@@ -7,28 +7,37 @@ class VoteComment extends Component {
   };
 
   render() {
-    const { votes, comment_id } = this.props;
+    const { votes } = this.props;
     const { voteChange } = this.state;
     return (
       <div>
         <p> votes:{votes + voteChange}</p>
-        <button onClick={() => this.handleVote(1)} disabled={voteChange > 0}>
-          🔺
+        <button
+          role="img"
+          aria-labelledby="votingButton"
+          onClick={() => this.handleVote(1)}
+          disabled={voteChange > 0}
+        >
+          <span role="img" aria-labelledby="upVote">
+            🔺
+          </span>
         </button>
         <button onClick={() => this.handleVote(-1)} disabled={voteChange < 0}>
-          🔻
+          <span role="img" aria-labelledby="downVote">
+            🔻
+          </span>
         </button>
       </div>
     );
   }
   handleVote = increment => {
-    const { comment_id } = this.props;
+    const { id, type } = this.props;
     api
-      .modifyVotesforComments(comment_id, increment)
-      .then(updatedArticle => {
+      .modifyVotes(id, increment, type)
+      .then(updatedComment => {
         this.setState(prevState => {
           return {
-            votes: prevState.votes + increment
+            voteChange: prevState.voteChange + increment
           };
         });
       })

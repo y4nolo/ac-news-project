@@ -1,13 +1,13 @@
 import React from "react";
 import { Link } from "@reach/router";
-import VoteArticle from "./VoteArticle";
+import Voting from "../Voting";
 
 function ArticlesList({ articles }) {
   return (
     <div>
       {articles.map(article => {
         return (
-          <div key={articles.article_id} className="listItem">
+          <div key={article.article_id} className="listItem">
             <Link to={`/${article.article_id}`}>
               <h3> {article.title}</h3>
             </Link>
@@ -21,8 +21,9 @@ function ArticlesList({ articles }) {
             <h5>Comments: {article.comment_count}</h5>
 
             <div>
-              <VoteArticle
-                article_id={article.article_id}
+              <Voting
+                id={article.article_id}
+                type="articles"
                 votes={article.votes}
               />
             </div>

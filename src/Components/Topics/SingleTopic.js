@@ -1,12 +1,15 @@
 import React, { Component } from "react";
 import * as api from "../Api";
 import ArticlesList from "../Articles/ArticlesList";
+import ErrorPage from "../ErrorPage";
 
 class SingleTopic extends Component {
   state = {
-    articles: []
+    articles: [],
+    err: null
   };
   render() {
+    if (this.state.err) return <ErrorPage error={this.state.error} />;
     return (
       <div>
         <ArticlesList articles={this.state.articles} />
@@ -15,9 +18,14 @@ class SingleTopic extends Component {
   }
   componentDidMount() {
     const { topic } = this.props;
-    api.getAllArticles({ topic }).then(articles => {
-      this.setState({ articles });
-    });
+    api
+      .getAllArticles({ topic })
+      .then(({ articles }) => {
+        this.setState({ articles, err: null });
+      })
+      .catch(err => {
+        this.setState({ err });
+      });
   }
 }
 

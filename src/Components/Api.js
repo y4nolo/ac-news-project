@@ -18,7 +18,7 @@ export const getAllArticles = ({ author, topic, sort_by, order_by, p }) => {
       }
     })
     .then(({ data }) => {
-      return data.articles;
+      return { articles: data.articles, total_count: data.total_count };
     });
 };
 // sort_by, order, author, topic, limit, p
@@ -71,6 +71,16 @@ export const modifyVotesforComments = (comment_id, increment) => {
     })
     .then(({ data: { comment } }) => {
       console.log(comment);
+    });
+};
+
+export const modifyVotes = (comment_id, increment, type) => {
+  return request
+    .patch(`/${type}/${comment_id}`, {
+      inc_votes: increment
+    })
+    .then(({ data }) => {
+      return data[type];
     });
 };
 

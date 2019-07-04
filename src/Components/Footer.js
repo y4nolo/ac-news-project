@@ -1,36 +1,36 @@
 import React from "react";
 
-import "../css/main.css";
+//import "../css/main.css";
 
 function Footer() {
   return (
     <div id="footer">
-      <ul class="icons">
+      <ul className="icons">
         <li>
-          <p href="https://twitter.com/northcoders" class="icon fa-twitter">
-            <span class="label">Twitter</span>
+          <p href="https://twitter.com/northcoders" className="icon fa-twitter">
+            <span className="label">Twitter</span>
           </p>
         </li>
         <li>
           <p
             href="https://www.facebook.com/northcoders/"
-            class="icon fa-facebook"
+            className="icon fa-facebook"
           >
-            <span class="label">Facebook</span>
+            <span className="label">Facebook</span>
           </p>
         </li>
         <li>
           <p
             href="https://www.instagram.com/northcoders/"
-            class="icon fa-instagram"
+            className="icon fa-instagram"
           >
-            <span class="label">Instagram</span>
+            <span className="label">Instagram</span>
           </p>
         </li>
 
         <li>
-          <p href="https://github.com/northcoders" class="icon fa-github">
-            <span class="label">Github</span>
+          <p href="https://github.com/northcoders" className="icon fa-github">
+            <span className="label">Github</span>
           </p>
         </li>
       </ul>

@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "@reach/router";
 import DeleteComment from "./DeleteComment";
-import VoteComment from "./VoteComment";
+import Voting from "../Voting";
 
-function CommentsList({ comments, displayRefreshedComments }) {
+function CommentsList({ comments, displayRefreshedComments, username }) {
   return comments.map(comment => {
     return (
       <div key={comment.comment_id} className="listItem">
@@ -15,11 +15,13 @@ function CommentsList({ comments, displayRefreshedComments }) {
 
         <h5>Posted at: {comment.created_at} </h5>
         <br />
-        <DeleteComment
-          comment_id={comment.comment_id}
-          displayRefreshedComments={displayRefreshedComments}
-        />
-        <VoteComment comment_id={comment.comment_id} votes={comment.votes} />
+        {username === comment.author && (
+          <DeleteComment
+            comment_id={comment.comment_id}
+            displayRefreshedComments={displayRefreshedComments}
+          />
+        )}
+        <Voting id={comment.comment_id} type="comments" votes={comment.votes} />
       </div>
     );
   });

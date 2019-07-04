@@ -1,15 +1,12 @@
 import React from "react";
-import "../css/main.css";
+// import "./Header.css";
 
 function Header({ username }) {
   return (
     <div id="header">
-      <h1>
-        <p href="/">
-          <span>NorthCoders News</span>
-        </p>
-      </h1>
-      <p> You are now logged in as {username}</p>
+      <h1 href="/">NorthCoders News</h1>
+
+      <p>You are now logged in as {username}</p>
     </div>
   );
 }

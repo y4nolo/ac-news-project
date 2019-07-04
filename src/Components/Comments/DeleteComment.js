@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import * as api from "../Api";
+
 class DeleteComment extends Component {
   render() {
     return (
@@ -9,12 +10,10 @@ class DeleteComment extends Component {
     );
   }
   handleDelete = event => {
-    const { comment_id, article_id, displayRefreshedComments } = this.props;
-    console.log(displayRefreshedComments);
+    const { comment_id, displayRefreshedComments } = this.props;
     api
       .deleteComment(comment_id)
       .then(() => {
-        console.log(comment_id, "commentiddeletess");
         displayRefreshedComments(comment_id);
       })
       .catch(err => {

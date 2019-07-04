@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import * as api from "../Api";
+import ErrorPage from "../ErrorPage";
 
 class PostComments extends Component {
   state = {
     user: "jessjelly",
-    body: ""
+    body: "",
+    error: null
   };
   render() {
-    const { body, user } = this.state;
+    const { body, user, error } = this.state;
+    if (error) return <ErrorPage error={error} />;
+
     return (
       <div>
-        <form
-          onSubmit={this.handlePostComment}
-          class="row uniform"
-          className="postcomment"
-        >
+        <form onSubmit={this.handlePostComment} className="row uniform">
           <p>Post comment as {`${user}`}:</p>
           <textarea
             value={body}
@@ -41,7 +41,7 @@ class PostComments extends Component {
         this.setState({ body: "" });
       })
       .catch(err => {
-        console.dir(err);
+        this.setState({ error: err });
       });
   };
 

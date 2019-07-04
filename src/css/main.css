@@ -2324,7 +2324,7 @@ textarea {
   text-decoration: none;
   width: 100%;
 }
-
+/* 
 input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid,
@@ -2388,7 +2388,7 @@ input[type="radio"] {
   opacity: 0;
   width: 1em;
   z-index: -1;
-}
+} */
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
@@ -2473,18 +2473,18 @@ textarea {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-input[type="text"]:focus,
+/* input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
   border-color: #062038;
   box-shadow: 0 0 0 1px #062038;
-}
-
+} */
+/* 
 .select-wrapper:before {
   color: rgba(255, 255, 255, 0.15);
-}
+} */
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
@@ -2806,9 +2806,9 @@ article.special {
   text-align: center;
 }
 
-/* header p {
+header p {
   position: relative;
-  margin: 0 0 1.5em 0;
+  margin-right: 0em 0em 2em 0em;
 }
 
 header h2 + p {
@@ -2830,7 +2830,8 @@ header h6 + p {
 
 header p {
   color: #676d71;
-} */
+}
+*/
 
 /* Tab */
 
@@ -2987,7 +2988,7 @@ table.alt tbody tr td {
   position: relative;
   z-index: 99;
 }
-/* 
+
 .wrapper header {
   margin-bottom: 4em;
 }
@@ -2996,18 +2997,17 @@ table.alt tbody tr td {
   .wrapper header {
     margin-bottom: 2em;
   }
-} */
-
-.wrapper.style1 {
+}
+*/ .wrapper.style1 {
   background-color: #062038;
   color: #c1c7cd;
 }
-
+/* 
 .wrapper.style1 input,
 .wrapper.style1 select,
 .wrapper.style1 textarea {
   color: #ffffff;
-}
+} */
 
 .wrapper.style1 a {
   color: #ffffff;
@@ -3115,7 +3115,7 @@ table.alt tbody tr td {
   background-color: #ffffff;
   color: #062038 !important;
 }
-
+/* 
 .wrapper.style1 label {
   color: #ffffff;
 }
@@ -3127,8 +3127,8 @@ table.alt tbody tr td {
 .wrapper.style1 textarea {
   background: rgba(255, 255, 255, 0.075);
   border-color: rgba(255, 255, 255, 0.15);
-}
-
+} */
+/* 
 .wrapper.style1 input[type="text"]:focus,
 .wrapper.style1 input[type="password"]:focus,
 .wrapper.style1 input[type="email"]:focus,
@@ -3136,7 +3136,7 @@ table.alt tbody tr td {
 .wrapper.style1 textarea:focus {
   border-color: #ffffff;
   box-shadow: 0 0 0 1px #ffffff;
-}
+} */
 
 .wrapper.style1 .select-wrapper:before {
   color: rgba(255, 255, 255, 0.15);
@@ -4012,7 +4012,7 @@ body {
 
 /* Position and sizing of burger button */
 .bm-burger-button {
-  position: fixed;
+  position: right;
   width: 36px;
   height: 30px;
   left: 36px;

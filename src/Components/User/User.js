@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import * as api from "../Api";
-import UserArticles from "./UserArticles";
+import ErrorPage from "../ErrorPage";
 
 class User extends Component {
-  state = { user: [], articles: [] };
+  state = { user: [], articles: [], error: null };
 
   render() {
-    const { user } = this.state;
+    const { user, error } = this.state;
+    if (error) return <ErrorPage error={error} />;
+
     return (
       <div>
         <img src={`${user.avatar_url}`} alt="profile" />
@@ -15,13 +17,16 @@ class User extends Component {
       </div>
     );
   }
-
   componentDidMount() {
     const { username } = this.props;
-    api.getUserByUserNameId(username).then(user => {
-      this.setState({ user: user });
-    });
+    api
+      .getUserByUserNameId(username)
+      .then(user => {
+        this.setState({ user: user });
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
   }
 }
-
 export default User;

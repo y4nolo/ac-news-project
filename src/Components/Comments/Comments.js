@@ -2,22 +2,25 @@ import React, { Component } from "react";
 import * as api from "../Api";
 import CommentsList from "./CommentsList";
 import PostComments from "./PostComments";
-import { arrayExpression } from "@babel/types";
+import ErrorPage from "../ErrorPage";
 
 class Comments extends Component {
   state = {
-    comments: []
+    comments: [],
+    error: null
   };
   render() {
-    const { comments } = this.state;
+    const { comments, error } = this.state;
     const { article_id } = this.props;
-    console.log(this.displayRefreshedComments);
+    if (error) return <ErrorPage error={error} />;
+
     return (
       <div>
         <h2> Comments</h2>
         <CommentsList
           comments={comments}
           displayRefreshedComments={this.displayRefreshedComments}
+          username={this.props.username}
         />
         <PostComments
           article_id={article_id}
@@ -35,25 +38,22 @@ class Comments extends Component {
   };
   //if commentID matched a comment being filtered then return comments to new array
   displayRefreshedComments = comment_id => {
-    const { comments } = this.state;
-    const filteredComments = comments.filter(comment => {
-      if (comment.comment_id !== comment_id) {
-        return { comments: comment };
-      }
+    this.setState(prevState => {
+      const comments = prevState.comments.filter(comment => {
+        return comment.comment_id !== comment_id;
+      });
+      return { comments };
     });
-    this.setState({ comments: filteredComments });
-    console.log(filteredComments);
   };
 
   componentDidMount() {
     api
       .getCommentByArticleId(this.props.article_id)
       .then(comments => {
-        console.log(comments);
         this.setState({ comments });
       })
       .catch(err => {
-        console.log(err);
+        this.setState({ error: err });
       });
   }
 }

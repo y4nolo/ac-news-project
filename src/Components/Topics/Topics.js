@@ -2,13 +2,18 @@ import React from "react";
 import TopicsList from "./TopicsList";
 import * as api from "../Api";
 
+import ErrorPage from "../ErrorPage";
+
 class Topics extends React.Component {
   state = {
-    topics: []
+    topics: [],
+    error: null
   };
 
   render() {
-    const { topics } = this.state;
+    const { topics, error } = this.state;
+    if (error) return <ErrorPage error={error} />;
+
     return (
       <div>
         <h2> Topics</h2>
@@ -24,7 +29,7 @@ class Topics extends React.Component {
         this.setState({ topics });
       })
       .catch(err => {
-        console.log(err);
+        this.setState({ error: err });
       });
   }
 }

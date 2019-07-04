@@ -3,16 +3,25 @@ import { Link } from "@reach/router";
 import * as api from "../Api";
 import Comments from "../Comments/Comments";
 import VoteArticle from "./VoteArticle";
+import ErrorPage from "../ErrorPage";
 
 class SingleArticle extends Component {
   state = {
-    article: {}
+    article: {},
+    error: null
   };
 
   render() {
-    const { article, article_id } = this.state;
+    const { article, error } = this.state;
+    const { article_id } = this.props;
+    if (error) return <ErrorPage error={error} />;
+
     return (
-      <div key={article.article_id} class="6u 12u$(medium)">
+      <div
+        key={article.article_id}
+        className="articles
+      "
+      >
         <h3>{article.title}</h3>
         <h5>{article.body} </h5>
         Topic: {article.topic}
@@ -25,16 +34,21 @@ class SingleArticle extends Component {
             Comments: {article.comment_count}
           </h5>
         </Link>
-        <Comments article_id={article.article_id} />
+        <Comments username={this.props.username} article_id={article_id} />
         <br />
       </div>
     );
   }
   componentDidMount() {
     const { article_id } = this.props;
-    api.getSingleArticle(article_id).then(article => {
-      this.setState({ article: article });
-    });
+    api
+      .getSingleArticle(article_id)
+      .then(article => {
+        this.setState({ article: article });
+      })
+      .catch(err => {
+        this.setState({ error: err });
+      });
   }
 }
 

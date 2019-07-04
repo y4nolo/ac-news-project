@@ -1,7 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
-
 import "./css/main.css";
+
 import Header from "./Components/Header";
 import NavBar from "./Components/NavBar";
 
@@ -28,29 +28,30 @@ class App extends React.Component {
     name: "Jess Jelly"
   };
   render() {
+    const { user, username, topics, article_id } = this.state;
     return (
       <div className="App">
-        <Header username={this.state.username} />
+        <Header username={username} />
         <NavBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
         <Banner />
 
         <Router>
           <Articles path="/" />
-          <SingleArticle path="/:article_id" />
+          <SingleArticle path="/:article_id" username={this.state.username} />
 
-          <Topics path="/topics" topics={this.state.topics} />
+          <Topics path="/topics" topics={topics} />
           <SingleTopic path="/topics/:topic" />
 
-          <User path="/user/:username" user={this.state.user} />
+          <User path="/user/:username" user={user} />
           <UserArticles path="/author/:user" />
 
           <Comments
             path="/:article_id/comments"
-            article_id={this.state.article_id}
-            user={this.state.user}
+            article_id={article_id}
+            user={user}
+            username={username}
           />
         </Router>
-
         <Footer />
       </div>
     );

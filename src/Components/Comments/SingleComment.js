@@ -3,23 +3,29 @@ import * as api from "../Api";
 import CommentsList from "./CommentsList";
 import VoteComment from "./VoteComment";
 // import { VoteComment } from "./VoteComment";
+import ErrorPage from '../ErrorPage'
 
 class SingleComment extends Component {
   state = {
     comments: [],
-    voteChange: 0
-  };
+    voteChange: 0,
+    error: null
+  }
   render() {
-    const { comment } = this.state;
+    const { comment, error } = this.state;
+    if (error) return <ErrorPage error={error} />;
+
     return (
       <div>
         <CommentsList comments={comments} />
       </div>
       <div>
- <VoteComment comment_id={comment_id} votes={vote}/>
+        <VoteComment comment_id={comment_id} votes={vote} />
       </div>
-    );
+    )
+  
   }
+
 
   componentDidMount() {
     api
@@ -28,7 +34,7 @@ class SingleComment extends Component {
         this.setState({ comments });
       })
       .catch(err => {
-        console.log(err);
+      this.setState({ error: err });
       });
   }
 }
