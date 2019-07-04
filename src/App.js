@@ -13,7 +13,6 @@ import Topics from "./Components/Topics/Topics";
 import User from "./Components/User/User";
 import Comments from "./Components/Comments/Comments";
 import SingleTopic from "./Components/Topics/SingleTopic";
-import UserArticles from "./Components/User/UserArticles";
 import Footer from "./Components/Footer";
 
 class App extends React.Component {
@@ -32,8 +31,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header username={username} />
-        <NavBar pageWrapId={"page-wrap"} outerContainerId={"App"} />
         <Banner />
+        <NavBar />
 
         <Router>
           <Articles path="/" />
@@ -43,7 +42,6 @@ class App extends React.Component {
           <SingleTopic path="/topics/:topic" />
 
           <User path="/user/:username" user={user} />
-          <UserArticles path="/author/:user" />
 
           <Comments
             path="/:article_id/comments"

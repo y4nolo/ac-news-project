@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import * as api from "../Api";
 import ArticlesList from "../Articles/ArticlesList";
 import ErrorPage from "../ErrorPage";
+import "./Topics.css";
+import "../Articles/Article.css";
 
 class SingleTopic extends Component {
   state = {
@@ -11,8 +13,8 @@ class SingleTopic extends Component {
   render() {
     if (this.state.err) return <ErrorPage error={this.state.error} />;
     return (
-      <div>
-        <ArticlesList articles={this.state.articles} />
+      <div className="singleTopic">
+        <ArticlesList className="listItem" articles={this.state.articles} />
       </div>
     );
   }

@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "@reach/router";
 import Voting from "../Voting";
+import "../Articles/Article.css";
+import "../../css/main.css";
 
 function ArticlesList({ articles }) {
   return (
-    <div>
+    <div className="listItem">
       {articles.map(article => {
         return (
           <div key={article.article_id} className="listItem">
@@ -20,7 +22,7 @@ function ArticlesList({ articles }) {
             <h5>Created: {article.created_at}</h5>
             <h5>Comments: {article.comment_count}</h5>
 
-            <div>
+            <div classname="voting">
               <Voting
                 id={article.article_id}
                 type="articles"

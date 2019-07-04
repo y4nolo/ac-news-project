@@ -6,18 +6,7 @@ import ErrorPage from "../ErrorPage";
 
 class Articles extends React.Component {
   state = {
-    articles: [
-      {
-        article_id: 8,
-        author: "cooljmessy",
-        title: "Express.js: A Server-Side JavaScript Framework",
-        topic: "coding",
-        created_at: "2016-06-30T07:59:39.000Z",
-        votes: 3,
-        comment_count: "7"
-        //delete later
-      }
-    ],
+    articles: [{}],
     order_by: "asc",
     sort_by: "created_at",
     page: 1,
@@ -33,25 +22,28 @@ class Articles extends React.Component {
     return (
       <div className="articles">
         <h2>Articles</h2>
-        <div class="select-wrapper">
-          <form className="menu">
+        <div>
+          <form class="form-inline">
             <label>
               Sort By:
               <select
+                inline-block
                 onChange={this.sortArticles}
                 name="category"
-                id="category"
+                id="select"
+                className="select"
               >
                 <option value="created_at">Date Created</option>
                 <option value="comment_count">Comment Count</option>
                 <option value="votes">Votes</option>
               </select>
             </label>
-          </form>
-          <form>
+
             <label>
               Order By:
               <select
+                inline-block
+                className="select"
                 onChange={this.OrderArticles}
                 name="category"
                 id="category"

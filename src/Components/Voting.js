@@ -10,7 +10,7 @@ class VoteComment extends Component {
     const { votes } = this.props;
     const { voteChange } = this.state;
     return (
-      <div>
+      <div className="voting">
         <p> votes:{votes + voteChange}</p>
         <button
           role="img"

@@ -1,6 +1,7 @@
 import React from "react";
 import TopicsList from "./TopicsList";
 import * as api from "../Api";
+import "./Topics.css";
 
 import ErrorPage from "../ErrorPage";
 
@@ -15,7 +16,7 @@ class Topics extends React.Component {
     if (error) return <ErrorPage error={error} />;
 
     return (
-      <div>
+      <div className="topics">
         <h2> Topics</h2>
         <div>{topics && <TopicsList topics={topics} />}</div>
       </div>

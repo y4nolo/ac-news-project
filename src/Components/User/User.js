@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import * as api from "../Api";
 import ErrorPage from "../ErrorPage";
+import "./User.css";
 
 class User extends Component {
   state = { user: [], articles: [], error: null };
@@ -10,7 +11,7 @@ class User extends Component {
     if (error) return <ErrorPage error={error} />;
 
     return (
-      <div>
+      <div className="user">
         <img src={`${user.avatar_url}`} alt="profile" />
         <h2>User: {user.username}</h2>
         <h3>Name: {user.name}</h3>

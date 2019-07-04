@@ -6,20 +6,17 @@ import { push as Menu } from "react-burger-menu";
 
 function NavBar() {
   return (
-    <div id="outer-container">
-      <Menu pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
+    <div classname="menu" id="outer-container">
       <main id="page-wrap">
-        <Menu right>
-          <p>
-            <Link to="/"> Home </Link>
-          </p>
-          <p>
-            <Link to="/"> Articles </Link>
-          </p>
-          <p>
-            <Link to="/topics"> Topics </Link>
-          </p>
-        </Menu>
+        <button>
+          <Link to="/"> Home </Link>
+        </button>
+        <button>
+          <Link to="/"> Articles </Link>
+        </button>
+        <button>
+          <Link to="/topics"> Topics </Link>
+        </button>
       </main>
     </div>
   );

@@ -90,6 +90,7 @@ summary,
 time,
 mark,
 audio,
+
 video {
   margin: 0;
   padding: 0em 0em 0em 0em;
@@ -97,6 +98,7 @@ video {
   font-size: 100%;
   font: inherit;
   vertical-align: baseline;
+  text-align: center;
 }
 
 article,
@@ -107,7 +109,7 @@ figure,
 footer,
 header,
 hgroup,
-/* menu, */
+menu,
 nav,
 section {
   display: block;
@@ -241,7 +243,9 @@ body {
   .container.\37 5\25 {
     width: 67.5%;
   }
-
+  .voting {
+    text-align: center;
+  }
   .container.\35 0\25 {
     width: 45%;
   }
@@ -1742,56 +1746,60 @@ body {
 
 body,
 input,
-select,
 textarea {
+  text-align: center;
+
   font-family: "Signika", sans-serif;
   font-size: 13pt;
   font-weight: 300;
   line-height: 1.65;
+  text-align: center;
 }
 
 @media screen and (max-width: 1680px) {
   body,
   input,
-  select,
   textarea {
     font-size: 11pt;
+    text-align: center;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 1280px) {
   body,
   input,
-  select,
   textarea {
     font-size: 11pt;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 980px) {
   body,
   input,
-  select,
   textarea {
     font-size: 12pt;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 736px) {
   body,
   input,
-  select,
   textarea {
     font-size: 12pt;
+    text-align: center;
   }
 }
 
 @media screen and (max-width: 480px) {
   body,
   input,
-  select,
   textarea {
     font-size: 12pt;
+    max-width: 50%;
+    text-align: center;
   }
 }
 
@@ -1825,7 +1833,8 @@ h5,
 h6 {
   font-weight: 700;
   line-height: 1.5;
-  margin: 0 0 1em 0;
+  margin: 1em 0 1em 0;
+  text-align: center;
 }
 
 h1 a,
@@ -1836,6 +1845,7 @@ h5 a,
 h6 a {
   color: inherit;
   text-decoration: none;
+  text-align: center;
 }
 
 h2 {
@@ -1876,6 +1886,7 @@ h4 {
 
 h5 {
   font-size: 0.9em;
+  text-align: center;
 }
 
 h6 {
@@ -1947,9 +1958,9 @@ hr.major {
 }
 
 input,
-select,
 textarea {
   color: #ffffff;
+  text-align: center;
 }
 
 a {
@@ -1972,6 +1983,7 @@ h4,
 h5,
 h6 {
   color: #ffffff;
+  text-align: center;
 }
 
 blockquote {
@@ -2308,7 +2320,6 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-select,
 textarea {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -2323,20 +2334,27 @@ textarea {
   padding: 0 1em;
   text-decoration: none;
   width: 100%;
+  max-width: 50%;
+  text-align: center;
+  align-items: center;
 }
-/* 
+
 input[type="text"]:invalid,
 input[type="password"]:invalid,
 input[type="email"]:invalid,
 select:invalid,
 textarea:invalid {
   box-shadow: none;
+  max-width: 50%;
+  text-align: center;
 }
 
 .select-wrapper {
   text-decoration: none;
   display: block;
   position: relative;
+  max-width: 50%;
+  text-align: center;
 }
 
 .select-wrapper:before {
@@ -2346,6 +2364,8 @@ textarea:invalid {
   font-style: normal;
   font-weight: normal;
   text-transform: none !important;
+  max-width: 50%;
+  text-align: center;
 }
 
 .select-wrapper:before {
@@ -2358,11 +2378,16 @@ textarea:invalid {
   right: 0;
   text-align: center;
   top: 0;
-  width: 2.75em;
+  width: 0em;
+  max-width: 50%;
+  text-align: center;
 }
 
 .select-wrapper select::-ms-expand {
   display: none;
+  max-width: 50%;
+  position: center;
+  text-align: center;
 }
 
 input[type="text"],
@@ -2370,6 +2395,9 @@ input[type="password"],
 input[type="email"],
 select {
   height: 2.75em;
+  max-width: 50%;
+  position: center;
+  text-align: center;
 }
 
 textarea {
@@ -2388,7 +2416,7 @@ input[type="radio"] {
   opacity: 0;
   width: 1em;
   z-index: -1;
-} */
+}
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
@@ -2467,24 +2495,31 @@ label {
 input[type="text"],
 input[type="password"],
 input[type="email"],
-select,
 textarea {
   background: rgba(255, 255, 255, 0.075);
   border-color: rgba(255, 255, 255, 0.15);
+  max-width: 50%;
+  position: center;
+  text-align: center;
 }
 
-/* input[type="text"]:focus,
+input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="email"]:focus,
 select:focus,
 textarea:focus {
   border-color: #062038;
   box-shadow: 0 0 0 1px #062038;
-} */
-/* 
+  position: center;
+  text-align: center;
+}
+
 .select-wrapper:before {
   color: rgba(255, 255, 255, 0.15);
-} */
+  max-width: 50%;
+  position: center;
+  text-align: center;
+}
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
@@ -2826,6 +2861,7 @@ header h5 + p,
 header h6 + p {
   font-size: 0.9em;
   margin-top: -0.6em;
+  text-align: center;
 }
 
 header p {
@@ -3002,12 +3038,14 @@ table.alt tbody tr td {
   background-color: #062038;
   color: #c1c7cd;
 }
-/* 
+
 .wrapper.style1 input,
-.wrapper.style1 select,
-.wrapper.style1 textarea {
+.wrapper.style1 .wrapper.style1 textarea {
   color: #ffffff;
-} */
+  max-width: 50%;
+  position: center;
+  text-align: center;
+}
 
 .wrapper.style1 a {
   color: #ffffff;
@@ -3115,7 +3153,7 @@ table.alt tbody tr td {
   background-color: #ffffff;
   color: #062038 !important;
 }
-/* 
+
 .wrapper.style1 label {
   color: #ffffff;
 }
@@ -3123,12 +3161,14 @@ table.alt tbody tr td {
 .wrapper.style1 input[type="text"],
 .wrapper.style1 input[type="password"],
 .wrapper.style1 input[type="email"],
-.wrapper.style1 select,
-.wrapper.style1 textarea {
+.wrapper.style1 .wrapper.style1 textarea {
   background: rgba(255, 255, 255, 0.075);
   border-color: rgba(255, 255, 255, 0.15);
-} */
-/* 
+  max-width: 50%;
+  position: center;
+  text-align: center;
+}
+
 .wrapper.style1 input[type="text"]:focus,
 .wrapper.style1 input[type="password"]:focus,
 .wrapper.style1 input[type="email"]:focus,
@@ -3136,10 +3176,15 @@ table.alt tbody tr td {
 .wrapper.style1 textarea:focus {
   border-color: #ffffff;
   box-shadow: 0 0 0 1px #ffffff;
-} */
+  max-width: 50%;
+  position: center;
+  text-align: center;
+}
 
 .wrapper.style1 .select-wrapper:before {
   color: rgba(255, 255, 255, 0.15);
+  position: center;
+  text-align: center;
 }
 
 .wrapper.style1 input[type="checkbox"] + label,
@@ -3224,9 +3269,9 @@ table.alt tbody tr td {
 }
 
 .wrapper.style2 input,
-.wrapper.style2 select,
-.wrapper.style2 textarea {
+.wrapper.style2 .wrapper.style2 textarea {
   color: #ffffff;
+  text-align: center;
 }
 
 .wrapper.style2 a {
@@ -3343,10 +3388,10 @@ table.alt tbody tr td {
 .wrapper.style2 input[type="text"],
 .wrapper.style2 input[type="password"],
 .wrapper.style2 input[type="email"],
-.wrapper.style2 select,
-.wrapper.style2 textarea {
+.wrapper.style2 .wrapper.style2 textarea {
   background: rgba(255, 255, 255, 0.075);
   border-color: rgba(255, 255, 255, 0.15);
+  text-align: center;
 }
 
 .wrapper.style2 input[type="text"]:focus,
@@ -3356,10 +3401,12 @@ table.alt tbody tr td {
 .wrapper.style2 textarea:focus {
   border-color: #062038;
   box-shadow: 0 0 0 1px #062038;
+  text-align: center;
 }
 
 .wrapper.style2 .select-wrapper:before {
   color: rgba(255, 255, 255, 0.15);
+  text-align: center;
 }
 
 .wrapper.style2 input[type="checkbox"] + label,
@@ -3600,11 +3647,10 @@ body.subpage {
   color: #ffffff;
 }
 
-/* #header > a[href="#menu"] {
+#header > a[href="#menu"] {
   text-decoration: none;
   -webkit-tap-highlight-color: transparent;
-} */
-/* 
+}
 #header > a[href="#menu"]:before {
   content: "";
   -moz-osx-font-smoothing: grayscale;
@@ -3613,9 +3659,8 @@ body.subpage {
   font-style: normal;
   font-weight: normal;
   text-transform: none !important;
-} */
-
-/* #header > a[href="#menu"]:before {
+}
+*/ #header > a[href="#menu"]:before {
   margin: 0 0.5em 0 0;
 }
 
@@ -3623,7 +3668,7 @@ body.subpage {
   border-left: solid 1px rgba(255, 255, 255, 0.15);
   padding-left: 1.25em;
   margin-left: 0.5em;
-} */
+}
 
 #header > a:last-child {
   padding-right: 1.25em;
@@ -4013,10 +4058,10 @@ body {
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: right;
-  width: 36px;
-  height: 30px;
-  left: 36px;
-  top: 36px;
+  width: 26px;
+  height: 20px;
+  left: 26px;
+  top: 26px;
 }
 
 /* Color/shape of burger icon bars */

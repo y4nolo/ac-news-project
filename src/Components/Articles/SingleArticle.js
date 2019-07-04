@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import * as api from "../Api";
 import Comments from "../Comments/Comments";
-import VoteArticle from "./VoteArticle";
 import ErrorPage from "../ErrorPage";
+import Voting from "../Voting";
 
 class SingleArticle extends Component {
   state = {
@@ -27,7 +27,11 @@ class SingleArticle extends Component {
         Topic: {article.topic}
         <Link to={`/user/${article.author}`}>Author: {article.author}</Link>
         Created: {article.created_at}
-        <VoteArticle article_id={article.article_id} votes={article.votes} />
+        <Voting
+          article_id={article.article_id}
+          votes={article.votes}
+          type={article}
+        />
         <Link to={`/${article.article_id}/comments/`}>
           {" "}
           <h5 article_id={article.article_id}>

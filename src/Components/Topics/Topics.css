@@ -1,28 +1,17 @@
-#articles {
+#topics {
   font-family: Arial, Helvetica, sans-serif;
   align-content: center;
   text-align: center;
 }
-.select {
-  position: center;
-  text-align: center;
-}
 
-.articles,
+.topics,
 .menu,
-.listItem .h5 .select {
+.listItem .h5 .singleTopic {
   padding: 1em 0.5em 1em 0.5em;
   text-align: center;
   align-content: center;
   text-align: center;
 }
-.btn .select {
+.btn {
   margin: 0.5em;
-}
-
-.select {
-  display: inline-block;
-  vertical-align: top;
-  display: inline;
-  vertical-align: top;
 }
