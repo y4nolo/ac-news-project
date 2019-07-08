@@ -31,7 +31,7 @@ https://5d19d485b925058f506f3cf3--ac-news-project.netlify.com
 
 ## API
 
-https://ac-nc-news-be.herokuapp.com/
+https://ac-nc-news-be.herokuapp.com/api
 
 ## Back End
 
