@@ -27,7 +27,8 @@ You will also see any lint errors in the console.
 ## Deployed version
 
 To see the deployed version please go to:
-https://5d19d485b925058f506f3cf3--ac-news-project.netlify.com
+
+https://ac-news-project.netlify.com/
 
 ## API
 
