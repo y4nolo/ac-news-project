@@ -8,7 +8,7 @@ This repo is the front end of the site and was built React.js, Reach/Router and 
 ##How to run locally
 To run the code locally, git clone the repo and install on your terminal.
 
-## minimum version
+## Minimum version
 
 After installing the repo on your local machine, you will have to install node.js
 
@@ -24,11 +24,15 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
 
-##Deployed version
+## Deployed version
+
 To see the deployed version please go to:
 https://5d19d485b925058f506f3cf3--ac-news-project.netlify.com
-##API
+
+## API
+
 https://ac-nc-news-be.herokuapp.com/
 
-##Back End
+## Back End
+
 https://github.com/y4nolo/be-nc-news
