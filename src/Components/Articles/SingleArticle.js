@@ -8,7 +8,7 @@ import * as moment from "moment";
 
 class SingleArticle extends Component {
   state = {
-    article: {},
+    article: [],
     error: null
   };
 
@@ -30,11 +30,7 @@ class SingleArticle extends Component {
           <Link to={`/user/${article.author}`}>Author: {article.author}</Link>
         </h5>
         <h5>Created: {moment(article.created_at).format("LLL")}</h5>
-        <Voting
-          article_id={article.article_id}
-          votes={article.votes}
-          type={article}
-        />
+        <Voting id={article.article_id} votes={article.votes} type="articles" />
         <Link to={`/${article.article_id}/comments/`}>
           {" "}
           <h5 article_id={article.article_id}>
