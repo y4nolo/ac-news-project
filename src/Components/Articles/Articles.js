@@ -42,7 +42,7 @@ class Articles extends React.Component {
               <select
                 inline-block
                 className="select"
-                onChange={this.OrderArticles}
+                onChange={this.orderArticles}
                 name="category"
                 id="category"
               >
@@ -76,7 +76,7 @@ class Articles extends React.Component {
     this.setState({ sort_by: event.target.value });
   };
 
-  OrderArticles = event => {
+  orderArticles = event => {
     this.setState({
       order_by: event.target.value
     });
