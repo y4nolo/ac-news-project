@@ -4,6 +4,7 @@ import * as api from "../Api";
 import Comments from "../Comments/Comments";
 import ErrorPage from "../ErrorPage";
 import Voting from "../Voting";
+import * as moment from "moment";
 
 class SingleArticle extends Component {
   state = {
@@ -24,9 +25,11 @@ class SingleArticle extends Component {
       >
         <h3>{article.title}</h3>
         <h5>{article.body} </h5>
-        Topic: {article.topic}
-        <Link to={`/user/${article.author}`}>Author: {article.author}</Link>
-        Created: {article.created_at}
+        <h5> Topic: {article.topic}</h5>
+        <h5>
+          <Link to={`/user/${article.author}`}>Author: {article.author}</Link>
+        </h5>
+        <h5>Created: {moment(article.created_at).format("LLL")}</h5>
         <Voting
           article_id={article.article_id}
           votes={article.votes}

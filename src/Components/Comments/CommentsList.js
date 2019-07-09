@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import DeleteComment from "./DeleteComment";
 import Voting from "../Voting";
+import * as moment from "moment";
 
 function CommentsList({ comments, displayRefreshedComments, username }) {
   return comments.map(comment => {
@@ -13,7 +14,7 @@ function CommentsList({ comments, displayRefreshedComments, username }) {
           <Link to={`/user/${comment.author}`}>Author: {comment.author}</Link>
         </h5>
 
-        <h5>Posted at: {comment.created_at} </h5>
+        <h5>Posted at: {moment(comment.created_at).format("LLL")} </h5>
         <br />
         {username === comment.author && (
           <DeleteComment

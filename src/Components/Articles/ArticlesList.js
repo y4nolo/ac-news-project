@@ -3,6 +3,7 @@ import { Link } from "@reach/router";
 import Voting from "../Voting";
 import "../Articles/Article.css";
 import "../../css/main.css";
+import * as moment from "moment";
 
 function ArticlesList({ articles }) {
   return (
@@ -19,7 +20,7 @@ function ArticlesList({ articles }) {
               Author:
               <Link to={`/user/${article.author}`}>{article.author}</Link>{" "}
             </h5>
-            <h5>Created: {article.created_at}</h5>
+            <h5>Created: {moment(article.created_at).format("LLL")}</h5>
             <h5>Comments: {article.comment_count}</h5>
 
             <div classname="voting">
