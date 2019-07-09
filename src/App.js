@@ -18,8 +18,6 @@ import Footer from "./Components/Footer";
 class App extends React.Component {
   state = {
     topics: null,
-    isLogin: null,
-    votes: 0,
     loggedInUser: "jessjelly",
     username: "jessjelly",
     avatar_url:

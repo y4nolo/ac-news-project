@@ -2,8 +2,6 @@ import React from "react";
 import { Link } from "@reach/router";
 import "../css/main.css";
 
-import { push as Menu } from "react-burger-menu";
-
 function NavBar() {
   return (
     <div classname="menu" id="outer-container">
