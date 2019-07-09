@@ -17,7 +17,6 @@ class Articles extends React.Component {
   render() {
     const { articles, page, total_count, error } = this.state;
     const maxPages = Math.ceil(total_count / 10) - 1;
-    console.log({ total_count, maxPages });
     if (error) return <ErrorPage error={error} />;
     return (
       <div className="articles">

@@ -42,7 +42,6 @@ class VoteComment extends Component {
         });
       })
       .catch(err => {
-        console.log(err);
         this.setState(({ voteChange }) => ({
           voteChange: voteChange - increment
         }));

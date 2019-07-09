@@ -16,9 +16,7 @@ class DeleteComment extends Component {
       .then(() => {
         displayRefreshedComments(comment_id);
       })
-      .catch(err => {
-        console.log(err);
-      });
+      .catch(err => {});
   };
 }
 
